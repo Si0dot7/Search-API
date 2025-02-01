@@ -1,5 +1,10 @@
 
 const Card = ({flags, name, region, capital, population}) => {
+
+    const formatNumber=(num)=> {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
+
   return (
     <div>
         <section className='max-w-sm w-full bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all'>
@@ -12,7 +17,7 @@ const Card = ({flags, name, region, capital, population}) => {
                     <div>
                         <h3>Region: {region}</h3>
                         <h3>Capital: {capital}</h3>
-                        <h3>Population: {population}</h3>
+                        <h3>Population: {formatNumber(population)} people</h3>
                     </div>
                 </div>
             </div>
